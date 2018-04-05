@@ -69,7 +69,25 @@
 
         public static function ConvertToRoman($num)
         {
-            return "";
+            if(!static::CheckIfNumber($num))
+            {
+                return "";
+            }
+        
+            $numeralString = "";
+            $decimal = array(1000, 500, 100, 50, 10, 5, 1);
+            $numeral = array("M", "D", "C", "L", "X", "V", "I");
+        
+            for($i = 0; $i < count($decimal); $i++)
+            {
+                while($num % $decimal[$i] < $num)
+                {
+                    $numeralString = $numeralString . $numeral[$i];
+                    $num -= $decimal[$i];
+                }
+            }
+
+            return $numeralString;
         }
     }
     /*
