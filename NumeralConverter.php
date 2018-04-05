@@ -1,7 +1,10 @@
 <?php
     final class NumeralConverter
     {
-        
+        public static function CheckIfNumber($data)
+        {
+            return false;
+        }
     }
     /*
     $usrNum = $_POST['usrInput'];
