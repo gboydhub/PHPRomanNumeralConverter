@@ -16,6 +16,14 @@
 
         public static function CheckIfRoman($data)
         {
+            if(!is_string($data))
+            {
+                return false;
+            }
+            if(preg_replace('~[MDCLXVI]~', '', $data) == "")
+            {
+                return true;
+            }
             return false;
         }
     }

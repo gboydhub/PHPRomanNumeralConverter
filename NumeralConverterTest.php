@@ -37,6 +37,7 @@
                 ["32", false],
                 ["IV", true],
                 ["LXII", true],
+                ["LXHI", false]
             ];
         }
     }
