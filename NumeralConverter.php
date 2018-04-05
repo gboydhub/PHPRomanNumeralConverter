@@ -26,6 +26,11 @@
             }
             return false;
         }
+
+        public static function ConvertToNumber($roman)
+        {
+            return 0;
+        }
     }
     /*
     $usrNum = $_POST['usrInput'];

@@ -40,5 +40,24 @@
                 ["LXHI", false]
             ];
         }
+
+        /**
+         * @dataProvider convertnumProvider
+         */
+        public function testCanConvertRomanToNum($arg, $expected)
+        {
+            $this->assertSame(NumeralConverter::ConvertToNumber($arg), $expected);
+        }
+
+        public function convertnumProvider()
+        {
+            return [
+                [32, 0],
+                ["32", 0],
+                ["IV", 4],
+                ["CXXVIII", 128],
+                ["LXHI", 0]
+            ];
+        }
     }
 ?>
