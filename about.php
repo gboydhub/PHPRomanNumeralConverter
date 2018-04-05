@@ -23,7 +23,7 @@ $(document).ready(function(){
     $("#change").click(function(){
         var usrInput = $("#usrInput").val();
         var formData = "usrInput=" + usrInput;
-        var pageURL = "convert.php";
+        var pageURL = "NumeralConverter.php";
         if(usrInput == '')
         {
             SetStatus("Please enter a number");
