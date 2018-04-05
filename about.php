@@ -23,10 +23,10 @@ $(document).ready(function(){
     $("#change").click(function(){
         var usrInput = $("#usrInput").val();
         var formData = "usrInput=" + usrInput;
-        var pageURL = "NumeralConverter.php";
+        var pageURL = "convert.php";
         if(usrInput == '')
         {
-            SetStatus("Please enter a number");
+            SetStatus("Please enter a number or roman numeral");
         }
         else
         {
@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <form>
     <input type=text name="usrInput" id="usrInput"><br>
     <input type=submit name="change" id="change">
-</form>
+</form><br>
 <p class="rResult" id="rResult"></p>
 </center>
 
