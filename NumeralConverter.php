@@ -1,6 +1,22 @@
 <?php
     final class NumeralConverter
     {
+        public static $romanPairs = array(
+            'M' => 1000,
+            'CM' => 900,
+            'D' => 500,
+            'CD' => 400,
+            'C' => 100,
+            'XC' => 90,
+            'L' => 50,
+            'XL' => 40,
+            'X' => 10,
+            'IX' => 9,
+            'V' => 5,
+            'IV' => 4,
+            'I' => 1
+        );
+
         public static function CheckIfNumber($data)
         {
             if(is_int($data))
@@ -29,7 +45,26 @@
 
         public static function ConvertToNumber($roman)
         {
-            return 0;
+            if(!static::CheckIfRoman($roman))
+            {
+                return 0;
+            }
+
+            $retval = 0;
+            foreach(static::$romanPairs as $key => $val)
+            {
+                while(strpos($roman, $key) === 0)
+                {
+                    $retval += $val;
+                    $roman = substr($roman, strlen($key));
+                }
+            }
+
+            if(strlen($roman) > 0)
+            {
+                return 0;
+            }
+            return $retval;
         }
     }
     /*

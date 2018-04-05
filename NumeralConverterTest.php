@@ -56,7 +56,8 @@
                 ["32", 0],
                 ["IV", 4],
                 ["CXXVIII", 128],
-                ["LXHI", 0]
+                ["LXHI", 0],
+                ["LXLXVVCLCLXIMMIX", 0]
             ];
         }
     }
