@@ -3,6 +3,14 @@
     {
         public static function CheckIfNumber($data)
         {
+            if(is_int($data))
+            {
+                return true;
+            }
+            if(intval($data) > 0)
+            {
+                return true;
+            }
             return false;
         }
     }
