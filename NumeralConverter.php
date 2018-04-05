@@ -66,6 +66,11 @@
             }
             return $retval;
         }
+
+        public static function ConvertToRoman($num)
+        {
+            return "";
+        }
     }
     /*
     $usrNum = $_POST['usrInput'];

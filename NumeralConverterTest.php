@@ -60,5 +60,23 @@
                 ["LXLXVVCLCLXIMMIX", 0]
             ];
         }
+
+        /**
+         * @dataProvider convertromProvider
+         */
+        public function testCanConvertRomanToRoman($arg, $expected)
+        {
+            $this->assertSame(NumeralConverter::ConvertToRoman($arg), $expected);
+        }
+
+        public function convertromProvider()
+        {
+            return [
+                [10, "X"],
+                ["15", "XV"],
+                ["HIMAX", ""],
+                [2542, "MMDXLII"]
+            ];
+        }
     }
 ?>
