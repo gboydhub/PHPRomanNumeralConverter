@@ -75,15 +75,21 @@
             }
         
             $numeralString = "";
-            $decimal = array(1000, 500, 100, 50, 10, 5, 1);
-            $numeral = array("M", "D", "C", "L", "X", "V", "I");
-        
-            for($i = 0; $i < count($decimal); $i++)
+            $valList = array_values(static::$romanPairs);
+            $keyList = array_keys(static::$romanPairs);
+
+            $arrLen = count($valList);
+            
+            while($num > 0)
             {
-                while($num % $decimal[$i] < $num)
+                for($x = 0; $x < $arrLen; $x++)
                 {
-                    $numeralString = $numeralString . $numeral[$i];
-                    $num -= $decimal[$i];
+                    if($num >= $valList[$x])
+                    {
+                        $numeralString .= $keyList[$x];
+                        $num -= $valList[$x];
+                        break;
+                    }
                 }
             }
 
